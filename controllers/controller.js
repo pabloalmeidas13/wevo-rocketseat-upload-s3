@@ -31,9 +31,9 @@ exports.uploadAwsSdk = async (req, res, next) =>
         var params = {
             Body: req.file.buffer, //Dados da imagem
             Bucket:config.bucketName, //Bucket em que será salva a imagem
-            Key: req.file.originalname,
+            Key: `${Date.now().toString()}-${req.file.originalname}`,
             ContentType: req.file.mimetype, 
-            ACL: 'public-read',
+            ACL: 'public-read', //Lista de controle de acesso
             ContentEncoding : "application/json"
         };
     

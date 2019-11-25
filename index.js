@@ -12,6 +12,3 @@ app.listen(3000);
 app.use('/', indexRoute);
 
 module.exports = app;
-
-
-
